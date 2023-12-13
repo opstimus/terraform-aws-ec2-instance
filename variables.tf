@@ -18,6 +18,12 @@ variable "instance_type" {
   default = "t3.micro"
 }
 
+variable "root_volume_size" {
+  type        = number
+  description = "Volume size in GB"
+  default     = 10
+}
+
 variable "ami" {
   type    = string
   default = "AMI ID"

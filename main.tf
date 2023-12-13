@@ -35,6 +35,13 @@ resource "aws_instance" "main" {
   source_dest_check      = false
   subnet_id              = var.subnet_id
 
+  root_block_device {
+    delete_on_termination = true
+    volume_size           = var.root_volume_size
+    volume_type           = "gp3"
+    encrypted             = true
+  }
+
   user_data_replace_on_change = false
   user_data                   = var.user_data
 
