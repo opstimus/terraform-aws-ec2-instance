@@ -46,7 +46,8 @@ resource "aws_instance" "main" {
   user_data                   = var.user_data
 
   metadata_options {
-    http_tokens = "required"
+    http_endpoint = "enabled"
+    http_tokens   = "required"
   }
 
   tags = {
