@@ -55,6 +55,6 @@ resource "aws_eip" "main" {
 
 resource "aws_eip_association" "main" {
   count         = var.enable_eip ? 1 : 0
-  instance_id   = aws_instance.main[0].id
+  instance_id   = aws_instance.main.id
   allocation_id = aws_eip.main.id
 }
