@@ -72,3 +72,8 @@ variable "ingress_rules" {
   }))
   default = []
 }
+
+variable "key_name" {
+  type    = string
+  default = null
+}
