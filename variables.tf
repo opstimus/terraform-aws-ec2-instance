@@ -45,6 +45,11 @@ variable "user_data" {
   description = "Userdata"
 }
 
+variable "source_dest_check" {
+  type    = bool
+  default = true
+}
+
 variable "security_group_ids" {
   type        = list(any)
   description = "Security group ID"
