@@ -77,3 +77,8 @@ variable "key_name" {
   type    = string
   default = null
 }
+
+variable "termination_protection" {
+  type    = bool
+  default = false
+}
