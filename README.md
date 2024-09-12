@@ -55,7 +55,7 @@ This example demonstrates how to use the module to create an EC2 instance with a
 
 ```hcl
 module "ec2_instance" {
-  source              = "path_to_your_module"
+  source              = "github.com/opstimus/terraform-aws-ec2-instance?ref=v<RELEASE>"
 
   project             = "my-project"
   environment         = "dev"
@@ -83,3 +83,4 @@ module "ec2_instance" {
     }
   ]
 }
+```
