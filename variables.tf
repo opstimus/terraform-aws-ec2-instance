@@ -82,3 +82,9 @@ variable "termination_protection" {
   type    = bool
   default = false
 }
+
+variable "tags" {
+  type        = map(string)
+  description = "A map of tags to assign to the resource."
+  default     = {}
+}

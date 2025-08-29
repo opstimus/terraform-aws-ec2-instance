@@ -23,9 +23,7 @@ resource "aws_security_group" "main" {
     ipv6_cidr_blocks = ["::/0"]
   }
 
-  tags = {
-    Name = "${var.project}-${var.environment}-${var.name}"
-  }
+  tags = var.tags
 }
 
 resource "aws_instance" "main" {
@@ -52,15 +50,11 @@ resource "aws_instance" "main" {
     http_tokens   = "required"
   }
 
-  tags = {
-    "Name" = "${var.project}-${var.environment}-${var.name}"
-  }
+  tags = var.tags
 }
 
 resource "aws_eip" "main" {
-  tags = {
-    "Name" = "${var.project}-${var.environment}-${var.name}"
-  }
+  tags = var.tags
 }
 
 resource "aws_eip_association" "main" {
