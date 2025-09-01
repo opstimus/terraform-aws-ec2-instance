@@ -83,6 +83,12 @@ variable "termination_protection" {
   default = false
 }
 
+variable "associate_public_ip_address" {
+  type        = bool
+  description = "Association of Public IP Address"
+  default     = false
+}
+
 variable "tags" {
   type        = map(string)
   description = "A map of tags to assign to the resource."
