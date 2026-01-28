@@ -64,7 +64,7 @@ variable "vpc_id" {
 
 variable "ingress_rules" {
   description = "List of security group ingress rules"
-  type = list(object({
+  type = map(object({
     from_port   = number
     to_port     = number
     ip_protocol = string
