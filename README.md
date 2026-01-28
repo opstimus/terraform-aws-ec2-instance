@@ -73,14 +73,14 @@ module "ec2_instance" {
     {
       from_port   = 80
       to_port     = 80
-      protocol    = "tcp"
-      cidr_blocks = ["0.0.0.0/0"]
+      ip_protocol = "tcp"
+      cidr_ipv4   = ["0.0.0.0/0"]
     },
     {
       from_port   = 443
       to_port     = 443
-      protocol    = "tcp"
-      cidr_blocks = ["0.0.0.0/0"]
+      ip_protocol = "tcp"
+      cidr_ipv4 = ["0.0.0.0/0"]
     }
   ]
 }
