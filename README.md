@@ -33,12 +33,12 @@ This Terraform module provisions an EC2 instance within a specified VPC and subn
 | source_dest_check    | Enable source/destination check      | bool          | true        |    no    |
 | security_group_ids   | List of existing security group IDs  | list(any)     | []          |    no    |
 | vpc_id               | VPC ID needed to create security group| string       | null        |    no    |
-| ingress_rules        | List of security group ingress rules | map(object) | []          |    no    |
-|                      |                                      | from_port   = number         |           |          |
-|                      |                                      | to_port     = number         |           |          |
-|                      |                                      | ip_protocol = string         |           |          |
-|                      |                                      | cidr_ipv4   = list(string)  |           |          |
-|                      |                                      | description = string         |           |          |
+| ingress_rules        | Map of security group ingress rules  | map(object)  | {}          |    no    |
+| ingress_rules.from_port | Starting port for the ingress rule | number       | -           |   yes*   |
+| ingress_rules.to_port   | Ending port for the ingress rule   | number       | -           |   yes*   |
+| ingress_rules.ip_protocol | IP protocol (tcp, udp, icmp, etc.) | string       | -           |   yes*   |
+| ingress_rules.cidr_ipv4  | List of IPv4 CIDR blocks            | list(string) | -           |   yes*   |
+| ingress_rules.description | Description for the ingress rule    | string       | null        |    no    |
 | key_name             | Key pair name for the instance       | string        | null        |    no    |
 | termination_protection | Enable termination protection       | bool          | false       |    no    |
 | iam_instance_profile | IAM Instance Profile to launch the instance with | string | null | no |
