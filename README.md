@@ -9,13 +9,13 @@ This Terraform module provisions an EC2 instance within a specified VPC and subn
 | Name      | Version   |
 |-----------|-----------|
 | terraform | >= 1.3.0  |
-| aws       | >= 4.0    |
+| aws       | >= 6.0    |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws  | >= 4.0  |
+| aws  | >= 6.0  |
 
 ## Inputs
 
@@ -36,8 +36,8 @@ This Terraform module provisions an EC2 instance within a specified VPC and subn
 | ingress_rules        | List of security group ingress rules | list(object({ | []          |    no    |
 |                      |                                      | from_port   = number         |           |          |
 |                      |                                      | to_port     = number         |           |          |
-|                      |                                      | protocol    = string         |           |          |
-|                      |                                      | cidr_blocks = list(string)  |           |          |
+|                      |                                      | ip_protocol = string         |           |          |
+|                      |                                      | cidr_ipv4   = list(string)  |           |          |
 | key_name             | Key pair name for the instance       | string        | null        |    no    |
 | termination_protection | Enable termination protection       | bool          | false       |    no    |
 | iam_instance_profile | IAM Instance Profile to launch the instance with | string | null | no |
