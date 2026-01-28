@@ -13,6 +13,7 @@ resource "aws_vpc_security_group_ingress_rule" "main" {
   to_port           = each.value.to_port
   ip_protocol       = each.value.ip_protocol
   cidr_ipv4         = each.value.cidr_ipv4[0]
+  description       = try(each.value.description, null)
   tags              = var.tags
 }
 

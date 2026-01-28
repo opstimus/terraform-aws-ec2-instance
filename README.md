@@ -72,17 +72,17 @@ module "ec2_instance" {
   vpc_id              = "vpc-0a1b2c3d4eEXAMPLE"
   ingress_rules = {
     "HTTP" = {
-      from_port   = 80
-      to_port     = 80
-      ip_protocol = "tcp"
-      cidr_ipv4   = ["0.0.0.0/0"]
+      from_port   = 80,
+      to_port     = 80,
+      ip_protocol = "tcp",
+      cidr_ipv4   = ["0.0.0.0/0"],
       description = "Allow HTTP traffic"
     },
     "HTTPS" = {
-      from_port   = 443
-      to_port     = 443
-      ip_protocol = "tcp"
-      cidr_ipv4   = ["0.0.0.0/0"]
+      from_port   = 443,
+      to_port     = 443,
+      ip_protocol = "tcp",
+      cidr_ipv4   = ["0.0.0.0/0"],
       description = "Allow HTTPS traffic"
     }
   }
