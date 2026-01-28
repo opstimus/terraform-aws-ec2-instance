@@ -67,7 +67,11 @@ module "ec2_instance" {
   ami                 = "ami-12345678"
   subnet_id           = "subnet-0bb1c79de3EXAMPLE"
   enable_eip          = true
-  user_data           = file("userdata.sh")
+  user_data = replace(
+    file("userdata.sh"),
+    "\r\n",
+    "\n"
+  )
   source_dest_check   = true
   vpc_id              = "vpc-0a1b2c3d4eEXAMPLE"
   ingress_rules = {
