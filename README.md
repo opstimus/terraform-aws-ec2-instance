@@ -33,7 +33,7 @@ This Terraform module provisions an EC2 instance within a specified VPC and subn
 | source_dest_check    | Enable source/destination check      | bool          | true        |    no    |
 | security_group_ids   | List of existing security group IDs  | list(any)     | []          |    no    |
 | vpc_id               | VPC ID needed to create security group| string       | null        |    no    |
-| ingress_rules        | List of security group ingress rules | list(object({ | []          |    no    |
+| ingress_rules        | List of security group ingress rules | map(object) | []          |    no    |
 |                      |                                      | from_port   = number         |           |          |
 |                      |                                      | to_port     = number         |           |          |
 |                      |                                      | ip_protocol = string         |           |          |
