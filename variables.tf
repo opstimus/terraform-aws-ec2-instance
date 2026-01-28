@@ -63,14 +63,14 @@ variable "vpc_id" {
 }
 
 variable "ingress_rules" {
-  description = "List of security group ingress rules"
+  description = "Map of security group ingress rules"
   type = map(object({
     from_port   = number
     to_port     = number
     ip_protocol = string
     cidr_ipv4   = list(string)
   }))
-  default = []
+  default = {}
 }
 
 variable "key_name" {
