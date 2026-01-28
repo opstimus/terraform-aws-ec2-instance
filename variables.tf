@@ -70,6 +70,7 @@ variable "ingress_rules" {
     to_port     = number
     ip_protocol = string
     cidr_ipv4   = list(string)
+    description = optional(string)
   }))
   default = {}
 }

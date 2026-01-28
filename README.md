@@ -38,6 +38,7 @@ This Terraform module provisions an EC2 instance within a specified VPC and subn
 |                      |                                      | to_port     = number         |           |          |
 |                      |                                      | ip_protocol = string         |           |          |
 |                      |                                      | cidr_ipv4   = list(string)  |           |          |
+|                      |                                      | description = string         |           |          |
 | key_name             | Key pair name for the instance       | string        | null        |    no    |
 | termination_protection | Enable termination protection       | bool          | false       |    no    |
 | iam_instance_profile | IAM Instance Profile to launch the instance with | string | null | no |
@@ -75,12 +76,14 @@ module "ec2_instance" {
       to_port     = 80
       ip_protocol = "tcp"
       cidr_ipv4   = ["0.0.0.0/0"]
+      description = "Allow HTTP traffic"
     },
     "HTTPS" = {
       from_port   = 443
       to_port     = 443
       ip_protocol = "tcp"
       cidr_ipv4   = ["0.0.0.0/0"]
+      description = "Allow HTTPS traffic"
     }
   }
 }
