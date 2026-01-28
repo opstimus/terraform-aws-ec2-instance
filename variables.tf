@@ -43,6 +43,7 @@ variable "enable_eip" {
 variable "user_data" {
   type        = string
   description = "Userdata"
+  default     = ""
 }
 
 variable "source_dest_check" {
