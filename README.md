@@ -1,3 +1,11 @@
+> ⚠️ **Moved to the monorepo.**
+> This module now lives in [`opstimus/terraform-modules`](https://github.com/opstimus/terraform-modules) at `modules/aws-ec2-instance`.
+>
+> ```hcl
+> source = "git::https://github.com/opstimus/terraform-modules.git//modules/aws-ec2-instance?ref=aws-ec2-instance/v2.0.1"
+> ```
+>
+> This repository remains for existing consumers; new development happens in the monorepo.
 # EC2 Instance with Security Group Module
 
 ## Description
